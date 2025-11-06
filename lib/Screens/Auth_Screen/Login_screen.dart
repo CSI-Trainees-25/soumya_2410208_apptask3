@@ -60,6 +60,61 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                       ),
                       SizedBox(height: 20),
+                      SizedBox(
+                        width: 360,
+                        height: 55,
+                        child: OutlinedButton.icon(
+                          icon: Image.asset(
+                            'Assets/Images/image.png',
+                            height: 24,
+                            width: 24,
+                          ),
+                          label: const Text(
+                            'Continue with Google',
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600,
+                              color: Colors.black87,
+                            ),
+                          ),
+                          style: OutlinedButton.styleFrom(
+                            side: const BorderSide(color: Colors.grey),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            backgroundColor: Colors.white,
+                            padding: const EdgeInsets.symmetric(vertical: 12),
+                          ),
+                          onPressed: () {},
+                        ),
+                      ),
+                      SizedBox(
+                        height: 30,
+                        child: Row(
+                          children: [
+                            const Expanded(
+                              child: Divider(thickness: 1, color: Colors.grey),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 8.0,
+                              ),
+                              child: Text(
+                                'OR',
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w600,
+                                  color: Colors.black54,
+                                ),
+                              ),
+                            ),
+                            const Expanded(
+                              child: Divider(thickness: 1, color: Colors.grey),
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(height: 20),
 
                       SizedBox(
                         width: 360,
@@ -82,8 +137,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         width: 360,
                         child: TextFormField(
                           controller: passwordC,
-                          obscureText:
-                              _obscurePassword, // 👈 hides or shows text
+                          obscureText: _obscurePassword,
                           validator: (value) {
                             if (value == null || value.isEmpty) {
                               return 'Please enter your password';
@@ -97,14 +151,12 @@ class _LoginScreenState extends State<LoginScreen> {
                             suffixIcon: IconButton(
                               icon: Icon(
                                 _obscurePassword
-                                    ? Icons
-                                          .visibility_off // 👁️ closed
-                                    : Icons.visibility, // 👁️ open
+                                    ? Icons.visibility_off
+                                    : Icons.visibility,
                               ),
                               onPressed: () {
                                 setState(() {
-                                  _obscurePassword =
-                                      !_obscurePassword; // toggle visibility
+                                  _obscurePassword = !_obscurePassword;
                                 });
                               },
                             ),
