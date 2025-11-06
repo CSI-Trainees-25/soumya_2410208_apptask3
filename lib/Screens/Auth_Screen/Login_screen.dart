@@ -9,8 +9,8 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   final _formKey = GlobalKey<FormState>();
-  TextEditingController emailC = TextEditingController();
-  TextEditingController passwordC = TextEditingController();
+  TextEditingController _emailC = TextEditingController();
+  TextEditingController _passwordC = TextEditingController();
   bool _obscurePassword = true;
   @override
   Widget build(BuildContext context) {
@@ -136,7 +136,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       SizedBox(
                         width: 360,
                         child: TextFormField(
-                          controller: passwordC,
+                          controller: _passwordC,
                           obscureText: _obscurePassword,
                           validator: (value) {
                             if (value == null || value.isEmpty) {

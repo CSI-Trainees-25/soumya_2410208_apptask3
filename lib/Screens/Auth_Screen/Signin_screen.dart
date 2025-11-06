@@ -74,7 +74,7 @@ class _SignInScreenState extends State<SignInScreen> {
                             width: 24,
                           ),
                           label: const Text(
-                            'Continue with Google',
+                            'Sign Up with Google',
                             style: TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.w600,
